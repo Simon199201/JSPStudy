@@ -1,22 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>JSPStudy</display-name>
   <servlet>
-  	<servlet-name>config</servlet-name>
-  	<jsp-file>/13/config.jsp</jsp-file>
-  	<init-param>
-  		<param-name>username</param-name>
-  		<param-value>simon</param-value>
-  	</init-param>
-  	<init-param>
-  		<param-name>password</param-name>
-  		<param-value>jikexueyuan</param-value>
-  	</init-param>
+    <servlet-name>config</servlet-name>
+    <jsp-file>/13/config.jsp</jsp-file>
+    <init-param>
+      <param-name>username</param-name>
+      <param-value>darkmi</param-value>
+    </init-param>
+    <init-param>
+      <param-name>password</param-name>
+      <param-value>jikexueyuan</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>config</servlet-name>
-  	<url-pattern>/13/*</url-pattern>
+    <servlet-name>config</servlet-name>
+    <url-pattern>/13/*</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>com.jikexueyuan.servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/Hello</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.jikexueyuan.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CheckServlet</servlet-name>
+    <servlet-class>com.jikexueyuan.servlet.CheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckServlet</servlet-name>
+    <url-pattern>/checkServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet16</servlet-name>
+    <servlet-class>com.jikexueyuan.servlet.LoginServlet16</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet16</servlet-name>
+    <url-pattern>/LoginServlet16</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LogoutServlet16</servlet-name>
+    <servlet-class>com.jikexueyuan.servlet.LogoutServlet16</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet16</servlet-name>
+    <url-pattern>/LogoutServlet16</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.jikexueyuan.filter.EncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+ <!--  <filter>
+    <filter-name>PermissionFilter</filter-name>
+    <filter-class>com.jikexueyuan.filter.PermissionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PermissionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping> -->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -26,6 +88,34 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <session-config>
-      <session-timeout>10</session-timeout>
+    <session-timeout>10</session-timeout>
   </session-config>
+  
+  
+  <!-- 自己练习的 -->
+  <servlet>
+   <servlet-name>HelloServlet_Test</servlet-name>
+   <servlet-class>com.jikexueyuan.servlet.HelloServlet_Test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelloServlet_Test</servlet-name>
+  	<url-pattern>/HelloTest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+   <servlet-name>LoginServlet_Test</servlet-name>
+   <servlet-class>com.jikexueyuan.servlet.LoginServlet_Test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet_Test</servlet-name>
+  	<url-pattern>/LoginServlet_Test</url-pattern>
+  </servlet-mapping>
+  <!--数据库校验  -->
+  <servlet>
+   <servlet-name>CheckServlet_Test</servlet-name>
+   <servlet-class>com.jikexueyuan.servlet.CheckServlet_Test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CheckServlet_Test</servlet-name>
+  	<url-pattern>/CheckServlet_Test</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -14,7 +14,7 @@ public class JDBCTest {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test_db","root","");
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return conn;
 	}
@@ -47,7 +47,6 @@ public class JDBCTest {
 				st.close();
 				conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			 
